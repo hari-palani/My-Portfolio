@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class MainPage extends StatelessWidget {
-  const MainPage({super.key});
+class DesktopMainPage extends StatelessWidget {
+  const DesktopMainPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,17 +11,20 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        toolbarHeight: size.width * 0.05,
         backgroundColor: Colors.black,
         elevation: 8,
         shadowColor: const Color(0xFFB336FF),
         surfaceTintColor: const Color(0xFFB336FF),
         centerTitle: true,
-        leading: Text(
-          "  HARI PALANI",
-          style: GoogleFonts.bebasNeue(
-            color: const Color(0xFFB336FF),
-            fontSize: size.height * 0.05,
-            letterSpacing: 8,
+        leading: Center(
+          child: Text(
+            "HARI PALANI",
+            style: GoogleFonts.bebasNeue(
+              color: const Color(0xFFB336FF),
+              fontSize: size.width * 0.03,
+              letterSpacing: 8,
+            ),
           ),
         ),
         leadingWidth: size.width * 0.4,
@@ -29,7 +32,7 @@ class MainPage extends StatelessWidget {
           "WELCOME!",
           style: GoogleFonts.bebasNeue(
             color: const Color(0xFFB336FF),
-            fontSize: size.height * 0.05,
+            fontSize: size.width * 0.03,
             letterSpacing: 2,
           ),
         ),
@@ -40,7 +43,7 @@ class MainPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: EdgeInsets.only(left: size.width * 0.1),
+                padding: EdgeInsets.only(left: size.width * 0.05),
                 child: Stack(
                   alignment: Alignment.bottomCenter,
                   children: [
@@ -67,14 +70,14 @@ class MainPage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(
-                    0, size.height * 0.2, size.width * 0.1, 0),
+                padding: EdgeInsets.only(right: size.width * 0.1),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       '"Hello"',
                       style: GoogleFonts.caveat(
-                        fontSize: size.height * 0.1,
+                        fontSize: size.width * 0.05,
                         color: Colors.white,
                         shadows: [
                           const Shadow(
@@ -89,7 +92,7 @@ class MainPage extends StatelessWidget {
                         Text(
                           "I AM ",
                           style: GoogleFonts.bebasNeue(
-                            fontSize: size.height * 0.1,
+                            fontSize: size.width * 0.05,
                             color: Colors.white,
                             letterSpacing: 2,
                           ),
@@ -97,7 +100,7 @@ class MainPage extends StatelessWidget {
                         Text(
                           "HARI PALANI",
                           style: GoogleFonts.bebasNeue(
-                            fontSize: size.height * 0.1,
+                            fontSize: size.width * 0.05,
                             color: const Color(0xFFB336FF),
                             letterSpacing: 2,
                           ),
@@ -107,7 +110,7 @@ class MainPage extends StatelessWidget {
                     Text(
                       "Flutter App Developer",
                       style: GoogleFonts.bebasNeue(
-                          fontSize: size.height * 0.05,
+                          fontSize: size.width * 0.02,
                           color: Colors.white,
                           letterSpacing: 4),
                     ),
@@ -146,7 +149,13 @@ class MainPage extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.topCenter,
-            child: Image.asset('assets/lightbulb.png'),
+            child: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              radius: size.width * 0.1,
+              child: Image.asset(
+                'assets/lightbulb.png',
+              ),
+            ),
           ),
         ],
       ),
