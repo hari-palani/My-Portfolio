@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:myportfolio/desktop/pages/desktopaboutpage.dart';
+import 'package:myportfolio/desktop/pages/desktophomepage.dart';
 
 class DesktopMainPage extends StatelessWidget {
   const DesktopMainPage({super.key});
@@ -37,136 +38,13 @@ class DesktopMainPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Stack(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: size.width * 0.05),
-                child: Stack(
-                  alignment: Alignment.bottomCenter,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(size.width * 0.14),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 157, 0, 255),
-                              blurRadius: 150),
-                        ],
-                      ),
-                      child: CircleAvatar(
-                        backgroundColor: Colors.purple[300],
-                        radius: size.width * 0.14,
-                      ),
-                    ),
-                    CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: size.width * 0.18,
-                      child: Image.asset('assets/mypic.png'),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(right: size.width * 0.1),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      '"Hello"',
-                      style: GoogleFonts.caveat(
-                        fontSize: size.width * 0.05,
-                        color: Colors.white,
-                        shadows: [
-                          const Shadow(
-                            color: Colors.white,
-                            blurRadius: 20,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          "I AM ",
-                          style: GoogleFonts.bebasNeue(
-                            fontSize: size.width * 0.05,
-                            color: Colors.white,
-                            letterSpacing: 2,
-                          ),
-                        ),
-                        Text(
-                          "HARI PALANI",
-                          style: GoogleFonts.bebasNeue(
-                            fontSize: size.width * 0.05,
-                            color: const Color(0xFFB336FF),
-                            letterSpacing: 2,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "Flutter App Developer",
-                      style: GoogleFonts.bebasNeue(
-                          fontSize: size.width * 0.02,
-                          color: Colors.white,
-                          letterSpacing: 4),
-                    ),
-                    SizedBox(
-                      height: size.height * 0.05,
-                    ),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () => launchURL(
-                              "https://www.instagram.com/haripalani_hdk"),
-                          child: Image.asset("assets/instagram.png"),
-                        ),
-                        SizedBox(
-                          width: size.width * 0.02,
-                        ),
-                        GestureDetector(
-                          onTap: () => launchURL(
-                              "https://www.linkedin.com/in/hari-palani-036206252"),
-                          child: Image.asset("assets/linkedin.png"),
-                        ),
-                        SizedBox(
-                          width: size.width * 0.02,
-                        ),
-                        GestureDetector(
-                          onTap: () =>
-                              launchURL("https://github.com/hari-palani"),
-                          child: Image.asset("assets/github.png"),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          Align(
-            alignment: Alignment.topCenter,
-            child: CircleAvatar(
-              backgroundColor: Colors.transparent,
-              radius: size.width * 0.1,
-              child: Image.asset(
-                'assets/lightbulb.png',
-              ),
-            ),
-          ),
+      body: ListWheelScrollView(
+        itemExtent: size.height,
+        children: const [
+          DesktopHomePage(),
+          DesktopAboutPage(),
         ],
       ),
     );
-  }
-}
-
-launchURL(String url) async {
-  if (await canLaunchUrl(Uri.parse(url))) {
-    await launchUrl(Uri.parse(url));
-  } else {
-    throw 'Could not launch $url';
   }
 }
