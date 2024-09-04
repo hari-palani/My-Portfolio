@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/desktop/pages/desktopaboutpage.dart';
 import 'package:myportfolio/desktop/pages/desktophomepage.dart';
+import 'package:myportfolio/desktop/pages/desktopprojectpage.dart';
 
 class DesktopMainPage extends StatelessWidget {
   const DesktopMainPage({super.key});
@@ -40,9 +41,11 @@ class DesktopMainPage extends StatelessWidget {
       ),
       body: ListWheelScrollView(
         itemExtent: size.height,
-        children: const [
-          DesktopHomePage(),
-          DesktopAboutPage(),
+        physics: const FixedExtentScrollPhysics(),
+        children: [
+          const DesktopHomePage(),
+          const DesktopAboutPage(),
+          DesktopProjectPage(),
         ],
       ),
     );

@@ -37,6 +37,8 @@ dependencies:
   google_fonts:
   url_launcher:
   font_awesome_flutter:
+  smooth_page_indicator:
+  lottie:
 
 dev_dependencies:
   flutter_test:

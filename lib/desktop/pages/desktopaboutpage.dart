@@ -28,7 +28,7 @@ class DesktopAboutPage extends StatelessWidget {
                   letterSpacing: 4,
                 ),
               ),
-              SizedBox(height: size.height * 0.09),
+              SizedBox(height: size.height * 0.045),
               Row(
                 children: [
                   Text(
@@ -66,6 +66,7 @@ class DesktopAboutPage extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedBox(height: size.height*0.05),
             ],
           ),
           Column(
