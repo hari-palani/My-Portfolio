@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:myportfolio/components/mprojectlist.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MProjectPage extends StatelessWidget {
@@ -9,13 +10,13 @@ class MProjectPage extends StatelessWidget {
     required this.size,
     required this.title,
     required this.ghlink,
-    required this.animlink,
+    required this.image,
   });
 
   final Size size;
   final String title;
   final String ghlink;
-  final String animlink;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class MProjectPage extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.04,
               ),
-              Lottie.network(animlink, height: size.height * 0.2),
+              Image.asset(image,height: size.height*0.2,),
               SizedBox(
                 height: size.height * 0.02,
               ),

@@ -24,7 +24,7 @@ class MobileProjectPage extends StatelessWidget {
                 size: size,
                 title: title[index],
                 ghlink: ghlink[index],
-                animlink: animlink[index],
+                image: image[index],
                 );
                 },
                 itemCount: 3,

@@ -17,3 +17,9 @@ List<String> animlink = [
   "https://lottie.host/d324f510-8619-41e7-b9f3-1f36e21a67cc/LNKmgHpZHq.json",
   "https://lottie.host/c8288b87-e28b-4c5e-9b1c-c2e4d1b168da/HufNXuK0JS.json"
 ];
+
+List<String> image = [
+  "assets/tic-tac-toe.png",
+  "assets/server-traffic.png",
+  "assets/semi.png"
+];
