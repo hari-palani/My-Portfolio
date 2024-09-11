@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
-import 'package:myportfolio/components/mprojectlist.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MProjectPage extends StatelessWidget {
@@ -28,11 +26,11 @@ class MProjectPage extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: size.height * 0.04,
+                height: size.height * 0.05,
               ),
-              Image.asset(image,height: size.height*0.2,),
+              Image.asset(image,height: size.height*0.25,),
               SizedBox(
-                height: size.height * 0.02,
+                height: size.height * 0.05,
               ),
               TextButton(
                 onPressed: () => launchURL(ghlink),

@@ -14,8 +14,8 @@ class MobileProjectPage extends StatelessWidget {
         children: [
           SizedBox(height: size.height*0.3),
           Swiper(
-                itemHeight: size.height*0.4,
-                itemWidth: size.width*0.7,
+                itemHeight: size.height*0.5,
+                itemWidth: size.width*0.8,
                 loop: true,
                 duration: 1200,
                 scrollDirection: Axis.horizontal,
